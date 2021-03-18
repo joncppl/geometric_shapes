@@ -2,9 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 project(geometric_shapes)
 
 # Default to C++14
-if(NOT CMAKE_CXX_STANDARD)
-  set(CMAKE_CXX_STANDARD 14)
-endif()
+set(CMAKE_CXX_STANDARD 14)
 
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
 
@@ -61,6 +59,10 @@ add_library(${PROJECT_NAME} SHARED
   src/shape_to_marker.cpp
   src/shapes.cpp
 )
+
+set_target_properties(${PROJECT_NAME} PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
+
+
 ament_target_dependencies(${PROJECT_NAME}
   Boost
   Eigen3
