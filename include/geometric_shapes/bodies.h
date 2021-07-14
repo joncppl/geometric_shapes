@@ -38,7 +38,7 @@
 #define GEOMETRIC_SHAPES_BODIES_
 
 #if __cplusplus <= 199711L
-#error This header requires at least C++11
+//#error This header requires at least C++11
 #endif
 
 #include "geometric_shapes/aabb.h"
